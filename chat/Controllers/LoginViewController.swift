@@ -161,8 +161,7 @@ class LoginViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
         return imageView
     }()
-    
-   
+ 
     
     lazy var loginRegisterSegmentedControl: UISegmentedControl = {
         let sc = UISegmentedControl(items: ["Login", "Register"])
