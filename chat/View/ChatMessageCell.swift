@@ -57,7 +57,6 @@ class ChatMessageCell: UICollectionViewCell {
     
     let textView: UITextView = {
         let tv = UITextView()
-        tv.text = "pahooooo"
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.backgroundColor = .clear
         tv.textColor = .white

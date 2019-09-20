@@ -12,7 +12,7 @@ import MobileCoreServices
 import AVFoundation
 
 class ChatViewController: UICollectionViewController, UITextFieldDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     var messages = [Message]()
     let cellId = "cellId"
     var user: User? {
@@ -29,14 +29,14 @@ class ChatViewController: UICollectionViewController, UITextFieldDelegate, UICol
             let messagesRef = Database.database().reference().child("messages").child(messageId)
             messagesRef.observeSingleEvent(of: .value, with: { (snapshot) in
                 guard let dictionary = snapshot.value as? [String: Any] else { return }
-              
                 
-                    self.messages.append(Message(dictionary: dictionary))
-                    DispatchQueue.main.async {
-                        self.collectionView.reloadData()
-                        let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
-                        self.collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
-                    }
+                
+                self.messages.append(Message(dictionary: dictionary))
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
+                    self.collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
+                }
                 
                 
                 
@@ -44,7 +44,7 @@ class ChatViewController: UICollectionViewController, UITextFieldDelegate, UICol
         }, withCancel: nil)
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,17 +71,20 @@ class ChatViewController: UICollectionViewController, UITextFieldDelegate, UICol
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
+            
             let filename = NSUUID().uuidString + ".mov"
             let uploadTask = Storage.storage().reference().child("message-videos").child(filename).putFile(from: videoURL, metadata: nil) { (metadata, error) in
                 if error != nil {
                     print(error!.localizedDescription)
                     return
                 }
-                Storage.storage().reference().child(filename).downloadURL(completion: { (url, err) in
+                Storage.storage().reference().child("message-videos").child(filename).downloadURL(completion: { (url, err) in
+                   
                     if err != nil {
                         print(err!.localizedDescription)
                         return
                     }
+                    
                     let storageURL = url!.absoluteString
                     if let thumbnailImage = self.thumbnailImageForFileURL(fileURL: videoURL) {
                         self.uploadToFirebaseStorageUsingImage(image: thumbnailImage, completion: { (imageURL) in
@@ -92,7 +95,6 @@ class ChatViewController: UICollectionViewController, UITextFieldDelegate, UICol
                     }
                     
                 })
-              
             }
             
             uploadTask.observe(.progress) { (snapshot) in

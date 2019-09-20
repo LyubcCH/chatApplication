@@ -42,7 +42,6 @@
 		A565FC6A232FD053002AD203 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		A565FC6C233038C1002AD203 /* ChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		A565FC6E2333F913002AD203 /* ChatInputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputContainerView.swift; sourceTree = "<group>"; };
-		A565FC70233416BA002AD203 /* chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = chat.entitlements; sourceTree = "<group>"; };
 		A5CFA86823228A11002E2372 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		A5CFA86B2327E693002E2372 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A5EE61892321757D008F7818 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -90,7 +89,6 @@
 		A5022C80231FBC2D002816A1 /* chat */ = {
 			isa = PBXGroup;
 			children = (
-				A565FC70233416BA002AD203 /* chat.entitlements */,
 				A565FC62232D8F2F002AD203 /* Helpers */,
 				A565FC69232FD01B002AD203 /* View */,
 				A5CFA86A2327E682002E2372 /* Model */,

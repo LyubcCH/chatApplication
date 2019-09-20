@@ -11,8 +11,6 @@ import Firebase
 
 class UserCell: UITableViewCell {
     
-    
-    var a: Int?
     var message: Message? {
         didSet {
           
