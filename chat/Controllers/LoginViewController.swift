@@ -1,10 +1,4 @@
-//
-//  LoginViewController.swift
-//  chat
-//
-//  Created by Lyub Chibukhchian on 9/4/19.
-//  Copyright © 2019 Lyub Chibukhchian. All rights reserved.
-//
+
 
 import UIKit
 import Firebase
@@ -206,7 +200,7 @@ class LoginViewController: UIViewController {
         loginRegisterSegmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         loginRegisterSegmentedControl.bottomAnchor.constraint(equalTo: inputsContainerView.topAnchor, constant: -12).isActive = true
         loginRegisterSegmentedControl.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor, multiplier: 1).isActive = true
-        loginRegisterSegmentedControl.heightAnchor.constraint(equalToConstant: 36)
+        loginRegisterSegmentedControl.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
     func setupProfileImageView() {
         //x, y, width and height constraints for profileImageView

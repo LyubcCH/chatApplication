@@ -1,10 +1,4 @@
-//
-//  ViewController.swift
-//  chat
-//
-//  Created by Lyub Chibukhchian on 9/4/19.
-//  Copyright © 2019 Lyub Chibukhchian. All rights reserved.
-//
+
 
 import UIKit
 import Firebase
@@ -23,12 +17,6 @@ class MessagesViewController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "logout", style: .plain, target: self, action: #selector(handleLogout))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(handleNewMessage))
         ckeckIfTheUserIsLoggedIn()
-    
-       
-        
-        
-        
-        
     }
     
     func observeUserMessages() {
@@ -109,7 +97,6 @@ class MessagesViewController: UITableViewController {
             user.name = dictionary["name"] as? String
             user.profileImageURL = dictionary["profileImageURL"] as? String
             user.email = dictionary["email"] as? String
-//            user.setValuesForKeys(dictionary)
             self.showChatControllerForUser(user: user)
         }, withCancel: nil)
         

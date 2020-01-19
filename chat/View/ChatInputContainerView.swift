@@ -1,10 +1,4 @@
-//
-//  ChatInputContainerView.swift
-//  chat
-//
-//  Created by Lyub Chibukhchian on 9/19/19.
-//  Copyright © 2019 Lyub Chibukhchian. All rights reserved.
-//
+
 import UIKit
 
 class ChatInputContainerView: UIView, UITextFieldDelegate {
